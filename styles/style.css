@@ -154,6 +154,17 @@ button {
     1px -1px var(--outline-color), -1px -1px var(--outline-color);
 }
 
+@supports (
+  (text-stroke: 1px var(--background-color)) or
+    (-webkit-text-stroke: 1px var(--background-color))
+) {
+  .watermarc {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--background-color);
+    text-stroke: 1px var(--background-color);
+  }
+}
+
 .article-content {
   display: flex;
   flex-direction: column;
