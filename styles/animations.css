@@ -12,3 +12,130 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+.theme-menu__button:disabled::before {
+  animation: button-point 0.5s ease-in-out infinite alternate;
+}
+
+.theme-menu__button:disabled,
+.theme-menu__button:hover,
+.theme-menu__button:focus,
+.theme-menu__button:focus-visible {
+  transition: opacity 0.3s ease;
+}
+
+@keyframes button-point {
+  from {
+    margin-inline-start: -19px;
+  }
+  to {
+    margin-inline-start: -23px;
+  }
+}
+
+.theme-menu__button:focus-visible::after {
+  animation: outline-button 0.3s ease forwards;
+}
+
+@keyframes outline-button {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.card__like-button::before,
+.save-button::before,
+.dialog-button::before {
+  transform-origin: 0 0;
+  transform: scaleX(0);
+}
+
+.card__like-button:hover::before,
+.save-button:hover::before,
+.dialog-button:hover::before {
+  animation: button-cover 0.5s ease-in-out forwards;
+}
+
+@keyframes button-cover {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--heart-color);
+  transition: fill 0.3s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-color);
+  transition: fill 0.3s 0.05s;
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body,
+.like-icon.is-liked .contour {
+  fill: var(--heart-color);
+}
+
+.like-icon:active.is-liked .contour {
+  fill: var(--heart-color);
+  transition: fill 0.3s 0.06s;
+}
+
+.like-icon:active .contour {
+  fill: var(--accent-color);
+  transition: fill 0.1s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: scale-animation 0.3s ease-in 0.1s 1 alternate backwards;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-animation 0.3s 0.3s ease-in alternate;
+}
+
+@keyframes scale-animation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sparks-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

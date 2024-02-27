@@ -4,3 +4,50 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+:root.theme-light {
+  --background-color: #ffffff;
+  --accent-color: #000000;
+  --text-weight: var(--inter-weight-regular-light);
+  --title-weight: var(--inter-weight-bold-light);
+  --bg-image: var(--bg-image-light);
+  --outline-color: #ffffff;
+  --button-cover: #ffffff;
+  --floppy-color: #ffffff;
+}
+
+:root.theme-dark {
+  --background-color: #000000;
+  --accent-color: #00cc14;
+  --text-weight: var(--inter-weight-regular-dark);
+  --title-weight: var(--inter-weight-bold-dark);
+  --bg-image: var(--bg-image-dark);
+  --outline-color: #000000;
+  --button-cover: #00cc14;
+  --floppy-color: #00cc14;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #ffffff;
+    --accent-color: #000000;
+    --text-weight: var(--inter-weight-regular-light);
+    --title-weight: var(--inter-weight-bold-light);
+    --bg-image: var(--bg-image-light);
+    --outline-color: #ffffff;
+    --button-cover: #ffffff;
+    --floppy-color: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #000000;
+    --accent-color: #00cc14;
+    --text-weight: var(--inter-weight-regular-dark);
+    --title-weight: var(--inter-weight-bold-dark);
+    --bg-image: var(--bg-image-dark);
+    --outline-color: #000000;
+    --button-cover: #00cc14;
+    --floppy-color: #00cc14;
+  }
+}
