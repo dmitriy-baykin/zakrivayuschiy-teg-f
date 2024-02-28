@@ -30,39 +30,45 @@
 
 .header {
   width: var(--section-width);
-  height: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
+  block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
   margin: 0 auto;
   margin-block-start: 100px;
   margin-block-end: 100px;
-  padding-block-end: 25px;
+  padding-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   background-color: var(--background-color);
   font-family: var(--press-start), sans-serif;
-  gap: 25px;
   text-transform: uppercase;
   border: 2px solid var(--accent-color);
 }
 
 .header-title {
-  font-size: clamp(3.0625rem, 1.8943rem + 4.9844vw, 4.0625rem);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-weight: normal;
 }
 
 .subtitle {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin-block-start: 20px;
 }
 
-.theme-menu {
-  font-size: 14px;
+.header__theme-menu {
+  margin-inline-start: 20px;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
+  gap: 9px;
+  position: relative;
+  margin-block-start: 20px;
+}
+
+.theme-menu__item {
+  line-height: 20px;
+  font-size: 14px;
 }
 
 button {
@@ -126,10 +132,10 @@ button {
 }
 
 .article-title {
-  align-self: flex-start;
   font-size: 18px;
-  font-variation-settings: "wght" 785;
+  font-variation-settings: "wght" var(--title-weight);
   padding: 3px 10px;
+  border-block-end: 2px solid var(--accent-color);
 }
 
 .image-watermarc {
@@ -170,12 +176,13 @@ button {
   flex-direction: column;
   gap: 27px;
   padding: 25px;
+  border-block-start: 2px solid var(--accent-color);
 }
 
 .article-text {
   font-size: 18px;
   line-height: 21px;
-  font-weight: var(--text-weight);
+  font-variation-settings: "wght" var(--text-weight);
 }
 
 .like-buttons {
@@ -276,6 +283,11 @@ button {
   background-color: var(--background-color);
 }
 
+#dialog::backdrop {
+  background-color: #000;
+  opacity: 0.75;
+}
+
 .dialog-content {
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -318,6 +330,12 @@ button {
   .save-button {
     flex-direction: column;
     height: 84px;
+    width: 306px;
+  }
+
+  .floppy-image {
+    width: 30px;
+    height: 30px;
   }
 }
 
